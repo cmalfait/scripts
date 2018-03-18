@@ -1,0 +1,8 @@
+designate - DNS
+octavia - LbaaS
+celiometer - metrix
+magnum - k8s
+trove DbaaS
+zaquar - messaging
+manilla - sharedFS
+murano - application catalog

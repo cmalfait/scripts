@@ -12,7 +12,14 @@ yum-config-manager --enable openstack-queens
 sudo yum update -y
 sudo yum install -y openstack-packstack
 
-packstack --allinone --provision-demo=n --os-neutron-ovs-bridge-mappings=extnet:br-ex --os-neutron-ovs-bridge-interfaces=br-ex:enp30s0 --os-neutron-ml2-type-drivers=vxlan,flat
+##create volume group for cinder
+yum install lvm2
+systemctl enable lvm2-lvmetad.service
+systemctl start lvm2-lvmetad.service
+pvcreate /dev/sda
+vgcreate cinder-volumes /dev/sda
+
+packstack --allinone --provision-demo=n --os-neutron-ovs-bridge-mappings=extnet:br-ex --os-neutron-ovs-bridge-interfaces=br-ex:enp30s0 --os-neutron-ml2-type-drivers=vxlan,flat --cinder-backend=lvm --cinder-volumes-size=250G --cinder-volume-name=cinder-volumes --default-password='Chang3m3' --os-magnum-install=y --os-ceilometer-install=y --os-heat-install=y --os-neutron-lbaas-install=y
 
 cat << EOF > /etc/sysconfig/network-scripts/ifcfg-br-ex
 DEVICE=br-ex
