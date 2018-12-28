@@ -19,7 +19,9 @@ systemctl start lvm2-lvmetad.service
 pvcreate /dev/sda
 vgcreate cinder-volumes /dev/sda
 
-packstack --allinone --provision-demo=n --os-neutron-ovs-bridge-mappings=extnet:br-ex --os-neutron-ovs-bridge-interfaces=br-ex:enp7s0 --os-neutron-ml2-type-drivers=vxlan,flat --cinder-backend=lvm --cinder-volumes-size=250G --cinder-volume-name=cinder-volumes --default-password='Chang3m3' --os-magnum-install=y --os-ceilometer-install=y --os-heat-install=y --os-neutron-lbaas-install=y --os-swift-install=y --os-aodh-install=y --os-panko-install=y --os-sahara-install=y --os-trove-install=y
+packstack --allinone --provision-demo=n --os-neutron-ovs-bridge-mappings=extnet:br-ex --os-neutron-ovs-bridge-interfaces=br-ex:enp7s0 --os-neutron-ml2-type-drivers=vxlan,flat --cinder-backend=lvm --cinder-volumes-size=250G --cinder-volume-name=cinder-volumes --default-password='Chang3m3' --os-neutron-lbaas-install=y --os-swift-install=y
+
+#packstack --allinone --provision-demo=n --os-neutron-ovs-bridge-mappings=extnet:br-ex --os-neutron-ovs-bridge-interfaces=br-ex:enp7s0 --os-neutron-ml2-type-drivers=vxlan,flat --cinder-backend=lvm --cinder-volumes-size=250G --cinder-volume-name=cinder-volumes --default-password='Chang3m3' --os-magnum-install=y --os-ceilometer-install=y --os-heat-install=y --os-neutron-lbaas-install=y --os-swift-install=y --os-aodh-install=y --os-panko-install=y --os-sahara-install=y --os-trove-install=y
 
 cat << EOF > /etc/sysconfig/network-scripts/ifcfg-br-ex
 DEVICE=br-ex
