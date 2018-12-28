@@ -33,8 +33,8 @@ DNS1=192.168.0.1
 ONBOOT=yes
 EOF
 
-cat << EOF > /etc/sysconfig/network-scripts/ifcfg-enp4s0
-DEVICE=enp4s0
+cat << EOF > /etc/sysconfig/network-scripts/ifcfg-enp7s0
+DEVICE=enp7s0
 TYPE=OVSPort
 DEVICETYPE=ovs
 OVS_BRIDGE=br-ex
@@ -56,8 +56,8 @@ openstack network create internal_network
 openstack subnet create --network internal_network --dhcp --dns-nameserver 192.168.0.1 --allocation-pool start=10.0.0.10,end=10.0.0.250 --subnet-range 10.0.0.0/8 internal_subnet
 openstack router add subnet router1 internal_subnet
 
-#curl http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud-1808.qcow2c | glance image-create --name='centos7' --visibility=public --container-format=bare --disk-format=qcow2
+#curl  https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2c | glance image-create --name='centos7' --visibility=public --container-format=bare --disk-format=qcow2
 
-#curl |http://cloud.centos.org/centos/6/images/CentOS-6-x86_64-GenericCloud-1808.qcow2c | glance image-create --name='centos6' --visibility=public --container-format=bare --disk-format=qcow2
+#curl |http://cloud.centos.org/centos/6/images/CentOS-6-x86_64-GenericCloud.qcow2c | glance image-create --name='centos6' --visibility=public --container-format=bare --disk-format=qcow2
 
 #curl http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img | glance image-create --name='cirros image' --visibility=public --container-format=bare --disk-format=qcow2
