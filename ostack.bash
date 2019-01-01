@@ -68,8 +68,9 @@ curl https://cloud.centos.org/centos/6/images/CentOS-6-x86_64-GenericCloud.qcow2
 curl http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img | glance image-create --name='cirros image' --visibility=public --container-format=bare --disk-format=qcow2
 
 #increase defaults
-openstack quota set --instances 20 default
-openstack quota set --secgroups 30 default
-openstack quota set --ram 60000 default
-openstack quota set --volumes 20 default
+openstack quota set --instances 20 admin
+openstack quota set --secgroups 30 admin
+openstack quota set --ram 60000 admin
+openstack quota set --volumes 20 admin
+openstack quota set --cores 30 admin
 
