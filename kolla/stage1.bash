@@ -19,6 +19,11 @@ cp globals.yml /etc/kolla/
 kolla-genpwd
 
 kolla-ansible -i ./all-in-one bootstrap-servers
+
+sleep 5
+swift_ring.bash
+sleep 5
+
 kolla-ansible -i ./all-in-one prechecks
 kolla-ansible -i ./all-in-one deploy 
 
