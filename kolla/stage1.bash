@@ -8,7 +8,7 @@ yum -y install ansible
 pip install -U ansible
 yum -y erase PyYAML
 pip install kolla-ansible
-pip install python-openstackclient python-glanceclient python-neutronclient python-swiftclient python-magnumclient --ignore-installed
+pip install python-openstackclient python-glanceclient python-neutronclient python-swiftclient python-magnumclient python-designateclient --ignore-installed
 yum -y install PyYAML ansible vdo
 
 cp -r /usr/share/kolla-ansible/etc_examples/kolla /etc/

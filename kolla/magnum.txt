@@ -1,12 +1,13 @@
 ##deploy image
 
-openstack image create --public --property os_distro='fedora-atomic' --disk-format qcow2 --container-format bare --file Fedora-AtomicHost-29-20181025.1.x86_64.qcow2 fedora-atomic.qcow2
+openstack image create --public --property os_distro='fedora-atomic' --disk-format qcow2 --container-format bare --file Fedora-AtomicHost-29-20181025.1.x86_64.qcow2 fedora-atomic
 
 ##create template
 
-openstack coe cluster template create k8s-cluster-template --coe kubernetes --image f159ed02-ff2b-43fe-9d2d-531305d05d8d --keypair ostack --external-network public1 --dns-nameserver 8.8.8.8 --flavor m1.medium --docker-volume-size 5 --network-driver flannel
+openstack coe cluster template create k8s-cluster-template --coe kubernetes --image fedora-atomic --keypair ostack --external-network public1 --dns-nameserver 8.8.8.8 --flavor m1.medium --docker-volume-size 5 --network-driver flannel
 
 openstack coe cluster create k8s-cluster --cluster-template k8s-cluster-template --node-count 2 --master-count 1
+openstack coe cluster create k8s-cluster1 --cluster-template k8s-cluster-template --node-count 1
 
 openstack coe cluster list
 
