@@ -1,11 +1,11 @@
 #!/bin/bash
 
-index=0
-for d in sda sdc sdd; do
-    parted /dev/${d} -s -- mklabel gpt mkpart KOLLA_SWIFT_DATA 1 -1
-    sudo mkfs.xfs -f -L d${index} /dev/${d}1
-    (( index++ ))
-done
+#index=0
+#for d in sda sdc sdd; do
+#    parted /dev/${d} -s -- mklabel gpt mkpart KOLLA_SWIFT_DATA 1 -1
+#    sudo mkfs.xfs -f -L d${index} /dev/${d}1
+#    (( index++ ))
+#done
 
 STORAGE_NODES=(192.168.0.26)
 #KOLLA_SWIFT_BASE_IMAGE="kolla/oraclelinux-source-swift-base:4.0.0"

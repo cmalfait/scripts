@@ -27,9 +27,10 @@ kolla-ansible post-deploy
 cp /etc/kolla/admin-openrc.sh .
 
 source /etc/kolla/admin-openrc.sh
-#vi /usr/share/kolla-ansible/init-runonce
-#. /usr/share/kolla-ansible/init-runonce
-#
+
+cp init-runonce /usr/share/kolla-ansible
+. /usr/share/kolla-ansible/init-runonce
+
 ####TROUBLESHOOT
 #docker ps -a
 #docker exec -it fluentd bash
