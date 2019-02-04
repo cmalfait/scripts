@@ -3,18 +3,23 @@
 openstack image create --public --property os_distro='fedora-atomic' --disk-format qcow2 --container-format bare --file Fedora-AtomicHost-29-20181025.1.x86_64.qcow2 fedora-atomic
 
 ##create template
+openstack coe cluster template create k8s-cluster-template --coe kubernetes --image fedora-atomic --keypair ostack --external-network public1 --dns-nameserver 8.8.8.8 --flavor m1.small --docker-volume-size 5 --network-driver flannel --volume-driver cinder --public
 
-openstack coe cluster template create k8s-cluster-template --coe kubernetes --image fedora-atomic --keypair ostack --external-network public1 --dns-nameserver 8.8.8.8 --flavor m1.medium --docker-volume-size 5 --network-driver flannel
-
+##create cluster
 openstack coe cluster create k8s-cluster --cluster-template k8s-cluster-template --node-count 2 --master-count 1
-openstack coe cluster create k8s-cluster1 --cluster-template k8s-cluster-template --node-count 1
 
+##not sure
+eval $(magnum cluster-config k8s-cluster)
+kubectl create -f pod.yaml
+
+##list
 openstack coe cluster list
 
 ##create volume
 
 vi /etc/kolla/magnum-conductor/magnum.conf
+vi /etc/kolla/magnum-api/magnum.conf
 
 [cinder]
-default_docker_volume_type = volType1
+default_docker_volume_type = lvm
 
