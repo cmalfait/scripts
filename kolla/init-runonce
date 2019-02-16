@@ -73,7 +73,6 @@ curl https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2
 curl https://cloud.centos.org/centos/6/images/CentOS-6-x86_64-GenericCloud.qcow2c | openstack image create --disk-format qcow2 --container-format bare --public --property os_type=linux centos6
 
 wget https://download.fedoraproject.org/pub/alt/atomic/stable/Fedora-29-updates-20190121.0/AtomicHost/x86_64/images/Fedora-AtomicHost-29-20190121.0.x86_64.qcow2
-
 openstack image create --disk-format qcow2 --container-format bare --public --property os_type=linux --property os_distro=fedora-atomic  --file Fedora-AtomicHost-29-20190121.0.x86_64.qcow2 fedora-atomic
 
 echo Configuring neutron.
@@ -106,6 +105,8 @@ openstack security group rule create --ingress --ethertype IPv4 \
     --protocol tcp --dst-port 8000 ${ADMIN_SEC_GROUP}
 openstack security group rule create --ingress --ethertype IPv4 \
     --protocol tcp --dst-port 8080 ${ADMIN_SEC_GROUP}
+openstack security group rule create --ingress --ethertype IPv4 \
+    --protocol tcp --dst-port 1:65535 ${ADMIN_SEC_GROUP}
 
 if [ ! -f ~/.ssh/id_rsa.pub ]; then
     echo Generating ssh key.

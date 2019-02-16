@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Installing requirements..."
 yum -y install epel-release
 yum -y install python-pip
 pip install -U pip
@@ -8,33 +9,46 @@ yum -y install ansible
 pip install -U ansible
 yum -y erase PyYAML
 pip install kolla-ansible
-pip install python-openstackclient python-glanceclient python-neutronclient python-swiftclient python-magnumclient python-designateclient --ignore-installed
+pip install python-heatclient python-openstackclient python-glanceclient python-neutronclient python-swiftclient python-magnumclient python-designateclient --ignore-installed
 yum -y install PyYAML ansible vdo
+echo "Done installing requirements..."
+sleep 5
+clear
 
+echo "copying configs..."
 cp -r /usr/share/kolla-ansible/etc_examples/kolla /etc/
 cp /usr/share/kolla-ansible/ansible/inventory/* .
 
 cp globals.yml /etc/kolla/
-
 kolla-genpwd
+echo "Done copying configs..."
+sleep 5
+clear
 
+echo "deploying kolla"
 kolla-ansible -i ./all-in-one bootstrap-servers
 
+echo "Creating swift ring..."
+./swift_ring.bash
+echo "Done creating swift ring..."
 sleep 5
-swift_ring.bash
-sleep 5
+clear
 
 kolla-ansible -i ./all-in-one prechecks
 kolla-ansible -i ./all-in-one deploy 
+echo "Done deploying..."
+sleep 5
+clear
 
-
+echo "post deploy..."
 kolla-ansible post-deploy
 cp /etc/kolla/admin-openrc.sh .
 
 source /etc/kolla/admin-openrc.sh
 
-cp init-runonce /usr/share/kolla-ansible
-. /usr/share/kolla-ansible/init-runonce
+. ./init-runonce
+echo "Done with post..."
+sleep 5
 
 ####TROUBLESHOOT
 #docker ps -a
