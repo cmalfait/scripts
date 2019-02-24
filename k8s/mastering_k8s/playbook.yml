@@ -5,8 +5,9 @@
     - vars.yml 
   strategy: free 
 
-  tasks: - name: hack to resolve Problem with MergeList Issue 
-  shell: 'find /var/lib/apt/lists -maxdepth 1 -type f -exec rm -v {} \;' 
+  tasks: 
+  - name: hack to resolve Problem with MergeList Issue 
+    shell: 'find /var/lib/apt/lists -maxdepth 1 -type f -exec rm -v {} \;' 
 
   - name: update apt cache directly (apt module not reliable) 
     shell: 'apt-get clean && apt-get update' 
