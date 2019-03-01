@@ -25,15 +25,14 @@ echo "Done copying configs..."
 sleep 5
 clear
 
-echo "deploying kolla"
-kolla-ansible -i ./all-in-one bootstrap-servers
-
 echo "Creating swift ring..."
 ./swift_ring.bash
 echo "Done creating swift ring..."
 sleep 5
 clear
 
+echo "deploying kolla"
+kolla-ansible -i ./all-in-one bootstrap-servers
 kolla-ansible -i ./all-in-one prechecks
 kolla-ansible -i ./all-in-one deploy 
 echo "Done deploying..."

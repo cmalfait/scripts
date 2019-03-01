@@ -1,0 +1,7 @@
+wget  https://ftp-stud.hs-esslingen.de/pub/Mirrors/alt.fedoraproject.org/atomic/stable/Fedora-Atomic-25-20170512.2/CloudImages/x86_64/images/Fedora-Atomic-25-20170512.2.x86_64.qcow2
+
+openstack image create --public --property os_type=linux --property os_distro='fedora-atomic' --disk-format qcow2 --container-format bare --file Fedora-Atomic-25-20170512.2.x86_64.qcow2 fedora-atomic.qcow2
+
+openstack coe cluster template create --image fedora-atomic.qcow2 --keypair mykey --external-network public1 --dns-nameserver 8.8.8.8 --master-flavor m1.medium --flavor m1.small --docker-volume-size 5 --network-driver flannel --coe kubernetes k8s-cluster-template
+
+openstack coe cluster create --cluster-template k8s-cluster-template --master-count 1 --node-count 2 k8s-cluster
