@@ -73,7 +73,15 @@ curl https://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2
 curl https://cloud.centos.org/centos/6/images/CentOS-6-x86_64-GenericCloud.qcow2c | openstack image create --disk-format qcow2 --container-format bare --public --property os_type=linux centos6
 
 wget https://download.fedoraproject.org/pub/alt/atomic/stable/Fedora-29-updates-20190121.0/AtomicHost/x86_64/images/Fedora-AtomicHost-29-20190121.0.x86_64.qcow2
-openstack image create --disk-format qcow2 --container-format bare --public --property os_type=linux --property os_distro=fedora-atomic  --file Fedora-AtomicHost-29-20190121.0.x86_64.qcow2 fedora-atomic
+
+openstack image create --disk-format qcow2 --container-format bare --public --property os_type=linux --property os_distro=fedora-atomic --file Fedora-AtomicHost-29-20190121.0.x86_64.qcow2 fedora-atomic
+
+wget https://stable.release.core-os.net/amd64-usr/current/coreos_production_openstack_image.img.bz2
+
+bunzip2 coreos_production_openstack_image.img.bz2
+
+openstack image create --disk-format qcow2 --container-format bare --public --property os_type=linux --property os_distro=coreos --file coreos_production_openstack_image.img.bz2 coreos
+
 
 rm -rf *qcow*
 
