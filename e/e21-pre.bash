@@ -11,24 +11,28 @@
 #apt-get install libxprint 
 
 ##fedora
-#yum install zlib zlib-devel freetype freetype-devel fontconfig fontconfig-devel fribidi fribidi-devel harfbuzz harfbuzz-devel libpng libpng-devel libjpeg-turbo libjpeg-turbo-devel libtiff libtiff-devel librsvg2 librsvg2-devel libX11 libX11-devel libXext libXext-devel libXrender libXrender-devel libXcomposite libXcomposite-devel libXdamage libXdamage-devel libXfixes libXfixes-devel libXrandr libXrandr-devel libXinerama libXinerama-devel libXScrnSaver libXScrnSaver-devel libXp libXp-devel libXcursor libXcursor-devel libxkbfile libxkbfile-devel libxcb libxcb-devel xcb-util-keysyms-devel openssl-devel openssl openssl-libs libcurl libcurl-devel libgudev1 libgudev1-devel alsa-lib alsa-lib-devel LibRaw LibRaw-devel libspectre libspectre-devel gstreamer gstreamer-devel gstreamer-plugins-bad-free-devel gstreamer-plugins-bad-free libXinerama libXinerama-devel npapi-vlc lua-devel lua libwebp libwebp-devel xcb-util-keysyms mesa-libGL mesa-libGL-devel giflib giflib-devel libexif libexif-devel epdfview configure pulseaudio-libs-devel libsndfile-devel libsndfile libXtst-devel libgudev1 libgudev1-devel unifying-receiver-udev.noarch libmount-devel dbus-devel bullet bullet-devel gstreamer1-devel luajit luajit-devel gstreamer1-plugins-base gstreamer1-plugins* vlc vlc-core vlc-devel vlc-extras vlc-plugins tslib connman connman-devel wget 
-
 yum -y erase freetype-infinality
-
-yum -y install zlib zlib-devel freetype freetype-devel fontconfig fontconfig-devel fribidi fribidi-devel 
-yum -y install harfbuzz harfbuzz-devel libpng libpng-devel libjpeg-turbo libjpeg-turbo-devel 
-yum -y install libtiff libtiff-devel librsvg2 librsvg2-devel libX11 libX11-devel libXext libXext-devel 
-yum -y install libXrender libXrender-devel libXcomposite libXcomposite-devel libXdamage libXdamage-devel 
-yum -y install libXfixes libXfixes-devel libXrandr libXrandr-devel libXinerama libXinerama-devel 
-yum -y install libXScrnSaver libXScrnSaver-devel libXp libXp-devel libXcursor libXcursor-devel libxkbfile 
-yum -y install libxkbfile-devel libxcb libxcb-devel xcb-util-keysyms-devel openssl-devel openssl openssl-libs 
-yum -y install libcurl libcurl-devel libgudev1 libgudev1-devel alsa-lib alsa-lib-devel LibRaw LibRaw-devel 
-yum -y install libspectre libspectre-devel gstreamer gstreamer-devel gstreamer-plugins-bad-free-devel 
-yum -y install gstreamer-plugins-bad-free libXinerama libXinerama-devel lua-devel lua libwebp 
-yum -y install libwebp-devel xcb-util-keysyms mesa-libGL mesa-libGL-devel giflib giflib-devel libexif libexif-devel 
-yum -y install pulseaudio-libs-devel libsndfile-devel libsndfile libXtst-devel libgudev1 
-yum -y install libgudev1-devel libmount-devel dbus-devel bullet bullet-devel gstreamer1-devel 
+yum -y install zlib zlib-devel freetype freetype-devel fontconfig fontconfig-devel fribidi fribidi-devel
+yum -y install harfbuzz harfbuzz-devel libpng libpng-devel libjpeg-turbo libjpeg-turbo-devel
+yum -y install libtiff libtiff-devel librsvg2 librsvg2-devel libX11 libX11-devel libXext libXext-devel
+yum -y install libXrender libXrender-devel libXcomposite libXcomposite-devel libXdamage libXdamage-devel
+yum -y install libXfixes libXfixes-devel libXrandr libXrandr-devel libXinerama libXinerama-devel
+yum -y install libXScrnSaver libXScrnSaver-devel libXp libXp-devel libXcursor libXcursor-devel libxkbfile
+yum -y install libxkbfile-devel libxcb libxcb-devel xcb-util-keysyms-devel openssl-devel openssl openssl-libs
+yum -y install libcurl libcurl-devel libgudev1 libgudev1-devel alsa-lib alsa-lib-devel LibRaw LibRaw-devel
+yum -y install libspectre libspectre-devel gstreamer gstreamer-devel gstreamer-plugins-bad-free-devel
+yum -y install gstreamer-plugins-bad-free libXinerama libXinerama-devel lua-devel lua libwebp
+yum -y install libwebp-devel xcb-util-keysyms mesa-libGL mesa-libGL-devel giflib giflib-devel libexif libexif-devel
+yum -y install pulseaudio-libs-devel libsndfile-devel libsndfile libXtst-devel libgudev1
+yum -y install libgudev1-devel libmount-devel dbus-devel bullet bullet-devel gstreamer1-devel
 yum -y install luajit luajit-devel gstreamer1-plugins-base-devel gstreamer1-devel vlc vlc-core vlc-devel vlc-extras
-yum -y install tslib wget poppler-cpp-devel libspectre-devel LibRaw-devel librsvg2-devel 
-yum -y install pulseaudio-libs-devel libsndfile-devel bullet-devel xcb-util-keysyms-devel
-#yum -y install connman connman-devel
+yum -y install tslib wget poppler-cpp-devel libspectre-devel LibRaw-devel librsvg2-devel
+yum -y install bullet-devel xcb-util-keysyms-devel
+
+##new
+yum -y install libXau libXau-devel libXdmcp libXdmcp-devel libXp libXp-devel libXi libXi-devel egl-wayland-devel egl-wayland
+yum -y install glx-utils libglvnd-glx egl-utils mesa-libEGL mesa-libEGL-devel libwayland-egl libblkid libblkid-devel
+yum -y install systemd-udev systemd-devel libgudev poppler poppler-devel LibRaw-devel libunwind libunwind-devel meson
+yum -y install lz4 lz4-devel libinput-devel libxkbcommon-devel mesa-libgbm mesa-libgbm-devel 
+yum -y install libwayland-egl.x86_64 libwayland-client libwayland-cursor libwayland-server wayland-devel egl-wayland egl-wayland-devel
+
