@@ -19,7 +19,7 @@ rm -rf ./enventor*
 
 export PKG_CONFIG_PATH=/usr/lib64/pkgconfig
 
-for file in efl-1.22.1; do
+for file in efl-1.22.2; do
 
     DIR=`echo $file | awk -F "-" '{ print $1;}'`
     echo "Building $DIR"
@@ -47,7 +47,7 @@ for file in enlightenment-0.22.4; do
    cd ..
 done
 
-for file in terminology-1.4.0 rage-0.3.0; do
+for file in terminology-1.4.1 rage-0.3.0; do
     DIR=`echo $file | awk -F "-" '{ print $1;}'`
     echo "Building $DIR"
 
