@@ -1,0 +1,34 @@
+#!/bin/bash
+
+git clone https://github.com/spinnaker/clouddriver.git
+git clone https://github.com/spinnaker/clouddriver-cloudfoundry.git
+git clone https://github.com/spinnaker/dcd-spec.git
+git clone https://github.com/spinnaker/dcdspike.git
+git clone https://github.com/spinnaker/deck.git
+git clone https://github.com/spinnaker/deck-customized.git
+git clone https://github.com/spinnaker/deck-kayenta.git
+git clone https://github.com/spinnaker/embedded-redis.git
+git clone https://github.com/spinnaker/fiat.git
+git clone https://github.com/spinnaker/front50.git
+git clone https://github.com/spinnaker/gate.git
+git clone https://github.com/spinnaker/halyard.git
+git clone https://github.com/spinnaker/igor.git
+git clone https://github.com/spinnaker/java-object-diff.git
+git clone https://github.com/spinnaker/kayenta.git
+git clone https://github.com/spinnaker/keel.git
+git clone https://github.com/spinnaker/keiko.git
+git clone https://github.com/spinnaker/kork.git
+git clone https://github.com/spinnaker/moniker.git
+git clone https://github.com/spinnaker/orca.git
+git clone https://github.com/spinnaker/pipeline-templates.git
+git clone https://github.com/spinnaker/roer.git
+git clone https://github.com/spinnaker/rosco.git
+git clone https://github.com/spinnaker/rush.git
+git clone https://github.com/spinnaker/scheduled-actions.git
+git clone https://github.com/spinnaker/spin.git
+git clone https://github.com/spinnaker/spinnaker.git
+git clone https://github.com/spinnaker/spinnaker-dependencies.git
+git clone https://github.com/spinnaker/spinnaker-gradle-project.git
+git clone https://github.com/spinnaker/styleguide.git
+git clone https://github.com/spinnaker/swabbie.git
+git clone https://github.com/spinnaker/workshops.git
