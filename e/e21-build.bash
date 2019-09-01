@@ -1,5 +1,7 @@
 #!/bin/bash
 
+##Upgrade to version 0.23 of E.
+
 export CFLAGS="-O3 -ffast-math -march=native"
 
 #If you wish decently optimized code that is still debuggable (but that optimizations may still make a little hard to debug) you can do:
@@ -19,7 +21,7 @@ rm -rf ./enventor*
 
 export PKG_CONFIG_PATH=/usr/lib64/pkgconfig
 
-for file in efl-1.22.2; do
+for file in efl-1.22.3; do
 
     DIR=`echo $file | awk -F "-" '{ print $1;}'`
     echo "Building $DIR"
@@ -33,7 +35,7 @@ for file in efl-1.22.2; do
    cd ..
 done
 
-for file in enlightenment-0.22.4; do
+for file in enlightenment-0.23.0; do
 
     DIR=`echo $file | awk -F "-" '{ print $1;}'`
     echo "Building $DIR"
@@ -47,7 +49,7 @@ for file in enlightenment-0.22.4; do
    cd ..
 done
 
-for file in terminology-1.4.1 rage-0.3.0; do
+for file in terminology-1.5.0 rage-0.3.1; do
     DIR=`echo $file | awk -F "-" '{ print $1;}'`
     echo "Building $DIR"
 
