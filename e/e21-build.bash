@@ -1,6 +1,6 @@
 #!/bin/bash
 
-####Issue #8
+###SIS-7
 
 export CFLAGS="-O3 -ffast-math -march=native"
 
