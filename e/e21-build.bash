@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#testing
-#testing 2
-
-
 export CFLAGS="-O3 -ffast-math -march=native"
 
 #If you wish decently optimized code that is still debuggable (but that optimizations may still make a little hard to debug) you can do:
