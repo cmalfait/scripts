@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #testing
+#testing 2
 
 export CFLAGS="-O3 -ffast-math -march=native"
 
