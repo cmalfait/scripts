@@ -1,6 +1,6 @@
 #!/bin/bash
 
-###added glo
+####Issue #8
 
 export CFLAGS="-O3 -ffast-math -march=native"
 
